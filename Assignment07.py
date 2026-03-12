@@ -84,9 +84,9 @@ class Student(Person):
 
     # TODO call to the Person constructor and pass it the first_name and last_name data (Done)
     # super method connects first and last name to the Person class
-    def __init__(self, student_first_name: str = '', student_last_name: str = '', course_name: str = ''):
-        super().__init__(first_name=student_first_name,
-                         last_name=student_last_name)
+    def __init__(self, first_name: str = '', last_name: str = '', course_name: str = ''):
+        super().__init__(first_name=first_name,
+                         last_name=last_name)
 
         # TODO add an assignment to the course_name property using the course_name parameter (Done)
         self.course_name = course_name
@@ -139,8 +139,8 @@ class FileProcessor:
             # TODO replace this line of code to convert dictionary data to Student data (Done)
             # student_objects = json_students
             for row in json_students:    # Convert the list of dictionary rows into Student objects
-                students.append(Student(student_first_name=row["FirstName"],
-                                        student_last_name=row["LastName"],
+                students.append(Student(first_name=row["FirstName"],
+                                        last_name=row["LastName"],
                                         course_name=row["CourseName"]))
         except Exception as e:
             IO.output_error_messages(message="Error: There was a problem with reading the file.", error=e)
@@ -289,11 +289,11 @@ class IO:
         """
 
         try:
-            student_first_name = input("Enter the student's first name: ")
-            if not student_first_name.isalpha():
+            first_name = input("Enter the student's first name: ")
+            if not first_name.isalpha():
                 raise ValueError("The last name should not contain numbers.")
-            student_last_name = input("Enter the student's last name: ")
-            if not student_last_name.isalpha():
+            last_name = input("Enter the student's last name: ")
+            if not last_name.isalpha():
                 raise ValueError("The last name should not contain numbers.")
             course_name = input("Please enter the name of the course: ")
 
@@ -302,7 +302,7 @@ class IO:
             #           "LastName": student_last_name,
             #           "CourseName": course_name}
 
-            student= Student(student_first_name, student_last_name, course_name)
+            student= Student(first_name, last_name, course_name)
 
             student_data.append(student)
             print()

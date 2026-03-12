@@ -13,5 +13,15 @@
     "FirstName": "Sue",
     "LastName": "Celias",
     "CourseName": "Python 100"
+  },
+  {
+    "FirstName": "Vu",
+    "LastName": "Vic",
+    "CourseName": "Python 100"
+  },
+  {
+    "FirstName": "Mary",
+    "LastName": "Smith",
+    "CourseName": "Python 100"
   }
 ]
